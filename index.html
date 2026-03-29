@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gorthleck Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gorthleck Website" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ...existing code... -->
+  <header>
+    <h1>Gorthleck Website</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>Your content goes here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Gorthleck</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
