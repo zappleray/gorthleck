@@ -1,32 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Gorthleck Website</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gorthleck Website" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gorthleck Gardens</title>
+  <meta name="description" content="A portfolio of gardens, planting, and landscape work.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- ...existing code... -->
-  <header>
-    <h1>Gorthleck Website</h1>
+<body data-page="home">
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="index.html">Gorthleck Gardens</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pics.html">Pictures</a></li>
+          <li class="nav-item"><a class="nav-link" href="map.html">Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative py-5">
+      <div class="row min-vh-70 align-items-center">
+        <div class="col-lg-7">
+          <p class="eyebrow mb-3">Garden portfolio</p>
+          <h1 class="display-3 fw-semibold mb-3">Wild, atmospheric outdoor spaces.</h1>
+          <p class="lead col-lg-10 mb-4">
+            A simple, image-led portfolio for gardens, planting, and landscape work.
+            Swap the hero image for your Gorthleck-style artwork or any dramatic garden shot.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="pics.html" class="btn btn-light btn-lg px-4">View pictures</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-4">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>Welcome MY DUDE</h2>
-      <p>Your content goes here.</p>
+    <section class="section-pad bg-soft">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <h2 class="h4 mb-3">Picture-led</h2>
+              <p class="mb-0">Built to foreground strong visuals first, with clean text and minimal clutter.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <h2 class="h4 mb-3">Easy to update</h2>
+              <p class="mb-0">Drop new files into the <code>images</code> folder and update the image list in <code>index.js</code>.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="feature-card h-100">
+              <h2 class="h4 mb-3">Bootstrap-based</h2>
+              <p class="mb-0">Responsive layout, clean navigation, and quick styling without heavy setup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="eyebrow mb-2">Featured work</p>
+            <h2 class="display-6 mb-3">A portfolio that feels calm, visual, and expensive.</h2>
+            <p class="text-secondary mb-4">
+              Use this homepage to create atmosphere: one bold hero image, a short statement, and a few
+              selected images that suggest taste and confidence.
+            </p>
+            <a href="pics.html" class="btn btn-dark px-4">Browse the gallery</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <img src="images/hero.jpg" alt="Featured garden view" class="img-fluid rounded-4 shadow-soft home-grid-image">
+              </div>
+              <div class="col-6">
+                <img src="images/portfolio-1.jpg" alt="Garden planting detail" class="img-fluid rounded-4 shadow-soft home-grid-image">
+              </div>
+              <div class="col-12">
+                <img src="images/portfolio-2.jpg" alt="Garden path and borders" class="img-fluid rounded-4 shadow-soft home-grid-wide">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad bg-soft">
+      <div class="container text-center">
+        <p class="eyebrow mb-2">Next step</p>
+        <h2 class="display-6 mb-3">Ready to turn this into your live GitHub Pages site.</h2>
+        <p class="lead mx-auto mb-4 narrow">
+          Replace the placeholder images, tweak the copy, then push the folder to your GitHub repo and enable Pages.
+        </p>
+        <a href="contact.html" class="btn btn-light btn-lg px-4">Contact details</a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Gorthleck</p>
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© <span id="year"></span> Gorthleck Gardens</span>
+      <span>Portfolio website scaffold</span>
+    </div>
   </footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
