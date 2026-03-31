@@ -55,7 +55,7 @@ code {
   position: relative;
   background:
     linear-gradient(rgba(13,11,9,0.22), rgba(13,11,9,0.46)),
-    url("images/hero.jpg") center/cover no-repeat;
+    url("images/hero_screen.jpg") center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -88,6 +88,15 @@ code {
 .hero-section .eyebrow {
   color: rgba(255,255,255,0.84);
 }
+
+.hero-section h1,
+.hero-section .lead {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Optional: if you want *all* hero text (except buttons) white, use this instead:
+.hero-section { color: rgba(255,255,255,0.92); }
+*/
 
 .section-pad {
   padding: 5rem 0;
