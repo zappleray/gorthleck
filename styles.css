@@ -17,6 +17,16 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   background: var(--bg);
   color: var(--ink);
+
+  /* push footer to bottom on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  /* take remaining space so footer sits at the bottom */
+  flex: 1 0 auto;
 }
 
 a {
@@ -142,46 +152,55 @@ code {
 }
 
 .masonry-grid {
-  column-count: 1;
-  column-gap: 1.25rem;
+  /* was column-count based; switch to an even grid */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .masonry-grid {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
   .masonry-grid {
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .portfolio-card {
-  break-inside: avoid;
-  margin: 0 0 1.25rem;
-  background: rgba(255,255,255,0.72);
-  border: 1px solid var(--line);
-  border-radius: 1.25rem;
+  /* remove column-layout specific bits and spacing */
+  break-inside: auto;
+  margin: 0;
+
+  /* keep square corners */
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
 }
 
 .portfolio-card img {
   display: block;
   width: 100%;
+
+  /* makes every tile image the same shape + crops */
+  aspect-ratio: 4 / 3;
   height: auto;
+  object-fit: cover;
 }
 
 .portfolio-card figcaption {
-  padding: 0.95rem 1rem 1.05rem;
-  color: var(--muted);
-  font-size: 0.96rem;
+  /* optional: keep caption area consistent so cards stay even */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.2em * 2);
 }
 
 .map-frame {
-  border-radius: 1.5rem;
+  border-radius: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   background: white;
@@ -217,5 +236,30 @@ code {
   .home-grid-wide,
   .about-image-wide {
     height: 11rem;
+  }
+}
+
+/* Keep brand + hamburger on one row on mobile */
+.site-nav .container {
+  flex-wrap: nowrap;
+}
+
+.site-nav .navbar-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0; /* allow shrinking */
+}
+
+.site-nav .navbar-brand img {
+  width: auto;
+  height: 42px;
+  max-width: 70vw; /* stop the title image forcing the toggler to wrap */
+}
+
+/* Tighter on very small screens */
+@media (max-width: 575.98px) {
+  .site-nav .navbar-brand img {
+    height: 36px;
+    max-width: calc(100vw - 5rem); /* leave room for the hamburger button */
   }
 }

@@ -29,9 +29,72 @@ const portfolioImages = [
 		alt: "Garden image 6",
 		caption: "Planting composition",
 	},
+    {
+		src: "images/portfolio-1.jpg",
+		alt: "Garden image 1",
+		caption: "Planting and structure",
+	},
+	{
+		src: "images/portfolio-2.jpg",
+		alt: "Garden image 2",
+		caption: "Borders and pathways",
+	},
+	{
+		src: "images/portfolio-3.jpg",
+		alt: "Garden image 3",
+		caption: "Atmospheric detail",
+	},
+	{
+		src: "images/portfolio-4.jpg",
+		alt: "Garden image 4",
+		caption: "Texture and seasonal tone",
+	},
+	{
+		src: "images/portfolio-5.jpg",
+		alt: "Garden image 5",
+		caption: "Landscape view",
+	},
+	{
+		src: "images/portfolio-6.jpg",
+		alt: "Garden image 6",
+		caption: "Planting composition",
+	},
+    {
+		src: "images/portfolio-1.jpg",
+		alt: "Garden image 1",
+		caption: "Planting and structure",
+	},
+	{
+		src: "images/portfolio-2.jpg",
+		alt: "Garden image 2",
+		caption: "Borders and pathways",
+	},
+	{
+		src: "images/portfolio-3.jpg",
+		alt: "Garden image 3",
+		caption: "Atmospheric detail",
+	},
+	{
+		src: "images/portfolio-4.jpg",
+		alt: "Garden image 4",
+		caption: "Texture and seasonal tone",
+	},
+	{
+		src: "images/portfolio-5.jpg",
+		alt: "Garden image 5",
+		caption: "Landscape view",
+	},
+	{
+		src: "images/portfolio-6.jpg",
+		alt: "Garden image 6",
+		caption: "Planting composition",
+	}
 ];
 
+// Navigation active state
 const currentPage = document.body.dataset.page;
+
+// Loop through nav links and set active class based on current page
 document.querySelectorAll(".nav-link").forEach((link) => {
 	const href = link.getAttribute("href");
 	if (
@@ -46,10 +109,12 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 	}
 });
 
+// Set current year in footer
 document.querySelectorAll("#year").forEach((node) => {
 	node.textContent = new Date().getFullYear();
 });
 
+// Populate portfolio grid on pics.html
 const portfolioGrid = document.getElementById("portfolio-grid");
 if (portfolioGrid) {
 	portfolioImages.forEach((item) => {
